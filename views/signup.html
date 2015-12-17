@@ -1,0 +1,44 @@
+{% extends "main.html" %}
+{% block title %}  {% endblock title %}
+
+{% block content %}
+<body>
+
+{% if not user %}
+
+    <div class="registracija">
+    <div class="radio_chat">
+        <img src="/assets/img/register2.png" width="320px"/>
+        <br>
+        <form action="/signup" method="POST">
+            <input class="forma forma1" type="text" placeholder="Enter your name" name="name" />
+            <input class="forma forma1" type="text" placeholder="Enter your last name" name="lastname" />
+            <input class="forma forma1" type="text" placeholder="Enter your username" name="username" />
+            <input class="forma forma1" type="text" placeholder="Enter your email" name="email" />
+            <input class="forma forma1" type="password" placeholder="Choose a password" name="password" />
+            <br>
+            <br>
+            <input class="submit" type="submit" value="Create user" />
+        </form>
+   </div>
+</div>
+
+{% else %}
+<div class="chat">
+    <h2>Wellcome, {{ user.name }}!</h2>
+    <div class="new_chat wellcome">
+        <br>
+        <br>
+        <h3>Continue to</h3>
+        <br>
+        <a class="chat_button wellcome_button" href="/chat">CHATROOM</a>
+
+    </div>
+{% endif %}
+
+{% endblock content %}
+<button>
+
+
+
+

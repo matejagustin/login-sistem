@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+{% block title %}  {% endblock title %}
+
+{% block content %}
+
+{% block login %}{% endblock login %}
+
+<body>
+
+<div class="chat">
+    <div class="new_chat new_chat_fixed">
+         <br>
+        <form method="post" action="/chat">
+
+            <textarea class="forma" placeholder="enter your message:" name="msg"></textarea>
+            <br>
+            <button type="submit" class="chat_button">SEND</button>
+        </form>
+        <br>
+    </div>
+
+    <div class="chats chats_right">
+       {% for msg in msg %}
+                <p class="text_small" ><span style="color:#73BFC9; font-size: 1em;">{{ msg.name }}</span> wrote:</p>
+                <div>
+                    <h4>{{ msg.msg }}</h4>
+                    <br>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+
+{% endblock content %}
+
+
+

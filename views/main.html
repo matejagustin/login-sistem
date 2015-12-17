@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock title %} </title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    {% block extra_head %}{% endblock extra_head %}
+</head>
+<body>
+    {% block nav %}
+    <!-- nasa navigacija -->
+    <div class="header">
+        <div id="logo">
+            <a href="/"><img id="logotip" src="/assets/img/logo-ninja.png"/></a>
+        </div>
+        <div id="nav">
+            <ul>
+                {% if user %}
+                <li><a href="/logout">Logout</a></li>
+                <li> | </li>
+                <li><i class="fa fa-user fa-lg"></i> <span style="color:#99cece;">{{ user.name }}</li>
+                {% else %}
+                <li><a href="/signup">signup</a></li>
+                <li><a href="/login">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    <!-- konec navigacija -->
+    {% endblock nav %}
+
+{% block content %} {% endblock content %}
+    </div>
+
+    {% block footer %}
+    <div id="footer">
+        <p id="www">www.smartninja.com</p>
+    </div>
+    {% endblock footer %}
+
+</body>
+</html>

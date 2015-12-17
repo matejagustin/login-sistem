@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+{% block title %}  {% endblock title %}
+
+{% block content %}
+
+{% block login %}{% endblock login %}
+
+<div class="chat">
+	{% if failed %}
+    	<h2>OOoops!</h2> Login failed. Check your credentials and try again.
+		<br>
+		<br>
+		<br>
+		<br>
+	{% endif %}
+	<b
+	<h2>Please login:</h2>
+    <br>
+	<div class="login registracija">
+        <br>
+		<form class="form" action= "/login" method="POST">
+			<div class="inside">
+				<input class="forma white" type="text" placeholder="username" value="{{ username }}" name="username"/>
+				<br>
+				<input class="forma white" type="password" placeholder="password" name="password"/>
+				<br>
+				<button type="submit" class="chat_button">LOGIN</button>
+			</div>
+		</form>
+		<br>
+    </div>
+</div>
+
+
+{% endblock content %}
